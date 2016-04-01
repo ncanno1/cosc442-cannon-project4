@@ -112,48 +112,48 @@ public class Main {
         for(int i = 0; i < recipes.length; i++) {
             System.out.println((i+1) + ". " + recipes[i].getName());
         }
-        String recipeToEditString = inputOutput("Please select the number of the recipe to edit.");
-        int recipeToEdit = stringToInt(recipeToEditString) -1;
+        final String recipeToEditString = inputOutput("Please select the number of the recipe to edit.");
+        final int recipeToEdit = stringToInt(recipeToEditString) -1;
 	    if(recipeToEdit < 0) {
 	    	mainMenu();
 	    }
         
-        Recipe oldRecipe = recipes[recipeToEdit];
+	    final Recipe oldRecipe = recipes[recipeToEdit];
         
 	    //Read in recipe name
-	    String name = inputOutput(System.getProperty("line.separator") + "Please enter the recipe name: ");
+	    final String name = inputOutput(System.getProperty("line.separator") + "Please enter the recipe name: ");
 	    
 	    //Read in recipe price
-	    String priceString = inputOutput(System.getProperty("line.separator") + "Please enter the recipe price: $");
-	    int price = stringToInt(priceString);
+	    final String priceString = inputOutput(System.getProperty("line.separator") + "Please enter the recipe price: $");
+	    final int price = stringToInt(priceString);
 	    if(price < 0) {
 	    	mainMenu();
 	    }
 	    
 	    //Read in amt coffee
-	    String coffeeString = inputOutput(System.getProperty("line.separator") + "Please enter the units of coffee in the recipe: ");
-	    int amtCoffee = stringToInt(coffeeString);
+	    final String coffeeString = inputOutput(System.getProperty("line.separator") + "Please enter the units of coffee in the recipe: ");
+	    final int amtCoffee = stringToInt(coffeeString);
 	    if(amtCoffee < 0) {
 	    	mainMenu();
 	    }
 	    
 	    //Read in amt milk
-	    String milkString = inputOutput(System.getProperty("line.separator") + "Please enter the units of milk in the recipe: ");
+	    final String milkString = inputOutput(System.getProperty("line.separator") + "Please enter the units of milk in the recipe: ");
 	    final int amtMilk = stringToInt(milkString);
 	    if(amtMilk < 0) {
 	    	mainMenu();
 	    }
 	    
 	    //Read in amt sugar
-	    String sugarString = inputOutput(System.getProperty("line.separator") + "Please enter the units of sugar in the recipe: ");
-	    int amtSugar = stringToInt(sugarString);
+	    final String sugarString = inputOutput(System.getProperty("line.separator") + "Please enter the units of sugar in the recipe: ");
+	    final int amtSugar = stringToInt(sugarString);
 	    if(amtSugar < 0) {
 	    	mainMenu();
 	    }
 	    
 	    //Read in amt chocolate
-	    String chocolateString = inputOutput(System.getProperty("line.separator") + "Please enter the units of chocolate in the recipe: ");
-	    int amtChocolate = stringToInt(chocolateString);
+	    final String chocolateString = inputOutput(System.getProperty("line.separator") + "Please enter the units of chocolate in the recipe: ");
+	    final int amtChocolate = stringToInt(chocolateString);
 	    if(amtChocolate < 0) {
 	    	mainMenu();
 	    }
@@ -166,7 +166,7 @@ public class Main {
 	    newRecipe.setAmtSugar(amtSugar);
 	    newRecipe.setAmtChocolate(amtChocolate);
         
-        boolean recipeEdited = coffeeMaker.editRecipe(oldRecipe, newRecipe);
+	    final boolean recipeEdited = coffeeMaker.editRecipe(oldRecipe, newRecipe);
         
         if(recipeEdited) System.out.println(oldRecipe.getName() + " successfully edited.");
 	    else System.out.println(oldRecipe.getName() + "could not be edited.");
@@ -176,29 +176,29 @@ public class Main {
     
     public static void addInventory() {
 	    //Read in amt coffee
-	    String coffeeString = inputOutput(System.getProperty("line.separator") + "Please enter the units of coffee to add: ");
-	    int amtCoffee = stringToInt(coffeeString);
+    	final String coffeeString = inputOutput(System.getProperty("line.separator") + "Please enter the units of coffee to add: ");
+    	final int amtCoffee = stringToInt(coffeeString);
 	    if(amtCoffee < 0) {
 	    	mainMenu();
 	    }
 	    
 	    //Read in amt milk
-	    String milkString = inputOutput(System.getProperty("line.separator") + "Please enter the units of milk to add: ");
-	    int amtMilk = stringToInt(milkString);
+	    final String milkString = inputOutput(System.getProperty("line.separator") + "Please enter the units of milk to add: ");
+	    final int amtMilk = stringToInt(milkString);
 	    if(amtMilk < 0) {
 	    	mainMenu();
 	    }
 	    
 	    //Read in amt sugar
 	    String sugarString = inputOutput(System.getProperty("line.separator") + "Please enter the units of sugar to add: ");
-	    int amtSugar = stringToInt(sugarString);
+	    final int amtSugar = stringToInt(sugarString);
 	    if(amtSugar < 0) {
 	    	mainMenu();
 	    }
 	    
 	    //Read in amt chocolate
 	    String chocolateString = inputOutput(System.getProperty("line.separator") + "Please enter the units of chocolate to add: ");
-	    int amtChocolate = stringToInt(chocolateString);
+	    final int amtChocolate = stringToInt(chocolateString);
 	    if(amtChocolate < 0) {
 	    	mainMenu();
 	    }
