@@ -43,4 +43,13 @@ public class CoffeeMakerTest extends TestCase {
 	public void testAddInventory() {
 		assertTrue(cm.addInventory(50, 20, 100, 25));
 	}
+	
+	public void testCheckInventory1() {
+		cm.addInventory(50, 20, 100, 25);
+		i = cm.checkInventory();
+		assertEquals(50+15, i.getCoffee());
+		assertEquals(20+15, i.getMilk());
+		assertEquals(100+15, i.getSugar());
+		assertEquals(25+15, i.getChocolate());
+	}
 }
