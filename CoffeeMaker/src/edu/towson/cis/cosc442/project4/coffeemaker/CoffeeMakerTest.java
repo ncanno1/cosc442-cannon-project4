@@ -40,7 +40,7 @@ public class CoffeeMakerTest extends TestCase {
 		assertTrue(cm.editRecipe(r1, newRecipe));
 	}
 	
-	public void testAddInventory1() {
+	public void testAddInventory() {
 		assertTrue(cm.addInventory(50, 20, 100, 25));
 	}
 }
