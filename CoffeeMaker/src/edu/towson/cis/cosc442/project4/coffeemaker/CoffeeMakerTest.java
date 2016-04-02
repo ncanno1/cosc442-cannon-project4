@@ -52,4 +52,10 @@ public class CoffeeMakerTest extends TestCase {
 		assertEquals(100+15, i.getSugar());
 		assertEquals(25+15, i.getChocolate());
 	}
+	
+	public void testPurchaseBeverage1() {
+		cm.addRecipe(r1);
+		cm.addInventory(50, 20, 100, 25);
+		assertEquals(50, cm.makeCoffee(r1, 100));
+	}
 }
