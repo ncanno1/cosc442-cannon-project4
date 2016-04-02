@@ -131,6 +131,16 @@ public class CoffeeMakerTest extends TestCase {
 		assertEquals(100, cm.makeCoffee(r1, 100));
 	}
 	
+	//exact amount of inventory
+	public void testPurchaseBeverage4() {
+		r1.setAmtCoffee(15);
+		r1.setAmtMilk(15);
+		r1.setAmtSugar(15);
+		r1.setAmtChocolate(15);
+		cm.addRecipe(r1);
+		assertEquals(50, cm.makeCoffee(r1, 100));
+	}
+	
 	//get recipe given name
 	public void testGetRecipe() {
 		cm.addRecipe(r1);
