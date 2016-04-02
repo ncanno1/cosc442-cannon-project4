@@ -123,7 +123,7 @@ public class CoffeeMakerTest extends TestCase {
 		assertEquals(5, cm.makeCoffee(r1, 5));
 	}
 	
-	//try to purchase beverage without enough ingredients
+	//try to purchase beverage without enough coffee
 	public void testPurchaseBeverage3() {
 		cm.addRecipe(r1);
 		cm.makeCoffee(r1, 100);
@@ -131,8 +131,32 @@ public class CoffeeMakerTest extends TestCase {
 		assertEquals(100, cm.makeCoffee(r1, 100));
 	}
 	
-	//exact amount of inventory
+	//try to purchase beverage without enough milk
 	public void testPurchaseBeverage4() {
+		r1.setAmtMilk(15);
+		cm.addRecipe(r1);
+		cm.makeCoffee(r1, 100);
+		assertEquals(100, cm.makeCoffee(r1, 100));
+	}
+	
+	//try to purchase beverage without enough sugar
+	public void testPurchaseBeverage5() {
+		r1.setAmtSugar(15);
+		cm.addRecipe(r1);
+		cm.makeCoffee(r1, 100);
+		assertEquals(100, cm.makeCoffee(r1, 100));
+	}
+	
+	//try to purchase beverage without enough chocolate
+	public void testPurchaseBeverage6() {
+		r1.setAmtChocolate(15);
+		cm.addRecipe(r1);
+		cm.makeCoffee(r1, 100);
+		assertEquals(100, cm.makeCoffee(r1, 100));
+	}
+	
+	//exact amount of inventory
+	public void testPurchaseBeverage7() {
 		r1.setAmtCoffee(15);
 		r1.setAmtMilk(15);
 		r1.setAmtSugar(15);
