@@ -23,8 +23,59 @@ public class CoffeeMakerTest extends TestCase {
 		r1.setAmtChocolate(0);
 	}
 
+	//Successfully add recipe
 	public void testAddRecipe1() {
 		assertTrue(cm.addRecipe(r1));
+	}
+	
+	//Try to add a recipe that already exists
+	public void testAddRecipe2() {
+		cm.addRecipe(r1);
+		assertFalse(cm.addRecipe(r1));
+	}
+	
+	//Try to add a recipe to at max number of recipes
+	public void testAddRecipe3() {
+		Recipe r2, r3, r4, r5;
+		
+		r2 = new Recipe();
+		r2.setName("Drink2");
+		r2.setPrice(25);
+		r2.setAmtCoffee(5);
+		r2.setAmtMilk(4);
+		r2.setAmtSugar(4);
+		r2.setAmtChocolate(1);
+		
+		r3 = new Recipe();
+		r3.setName("Drink3");
+		r3.setPrice(50);
+		r3.setAmtCoffee(0);
+		r3.setAmtMilk(10);
+		r3.setAmtSugar(0);
+		r3.setAmtChocolate(0);
+		
+		r4 = new Recipe();
+		r4.setName("Drink4");
+		r4.setPrice(100);
+		r4.setAmtCoffee(6);
+		r4.setAmtMilk(4);
+		r4.setAmtSugar(3);
+		r4.setAmtChocolate(6);
+		
+		r5 = new Recipe();
+		r5.setName("Drink5");
+		r5.setPrice(75);
+		r5.setAmtCoffee(6);
+		r5.setAmtMilk(2);
+		r5.setAmtSugar(2);
+		r5.setAmtChocolate(0);
+		
+		cm.addRecipe(r2);
+		cm.addRecipe(r3);
+		cm.addRecipe(r4);
+		cm.addRecipe(r5);
+		
+		assertFalse(cm.addRecipe(r1));
 	}
 
 	public void testDeleteRecipe1() {
