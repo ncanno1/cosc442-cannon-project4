@@ -91,8 +91,14 @@ public class CoffeeMakerTest extends TestCase {
 		assertTrue(cm.editRecipe(r1, newRecipe));
 	}
 	
-	public void testAddInventory() {
+	//successfully add inventory
+	public void testAddInventory1() {
 		assertTrue(cm.addInventory(50, 20, 100, 25));
+	}
+	
+	//try to add negative inventory
+	public void testAddInventory2() {
+		assertFalse(cm.addInventory(-50, 20, 100, 25));
 	}
 	
 	public void testCheckInventory1() {
