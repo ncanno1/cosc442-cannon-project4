@@ -130,4 +130,10 @@ public class CoffeeMakerTest extends TestCase {
 		cm.makeCoffee(r1, 100);
 		assertEquals(100, cm.makeCoffee(r1, 100));
 	}
+	
+	//get recipe given name
+	public void testGetRecipe() {
+		cm.addRecipe(r1);
+		assertEquals(r1, cm.getRecipeForName("Coffee"));
+	}
 }
