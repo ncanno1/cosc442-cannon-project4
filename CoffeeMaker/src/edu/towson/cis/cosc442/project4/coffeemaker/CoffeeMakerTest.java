@@ -115,4 +115,19 @@ public class CoffeeMakerTest extends TestCase {
 		cm.addInventory(50, 20, 100, 25);
 		assertEquals(50, cm.makeCoffee(r1, 100));
 	}
+	
+	//try to purchase beverage without the correct amount of money
+	public void testPurchaseBeverage2() {
+		cm.addRecipe(r1);
+		cm.addInventory(50, 20, 100, 25);
+		assertEquals(5, cm.makeCoffee(r1, 5));
+	}
+	
+	//try to purchase beverage without enough ingredients
+	public void testPurchaseBeverage3() {
+		cm.addRecipe(r1);
+		cm.makeCoffee(r1, 100);
+		cm.makeCoffee(r1, 100);
+		assertEquals(100, cm.makeCoffee(r1, 100));
+	}
 }
